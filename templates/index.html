@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elevate Your Career with AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        /* Base body styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f0f8ff; /* Light background */
+            color: #333; /* Dark text */
+            transition: background 0.5s ease-in-out, color 0.5s ease-in-out; /* Smooth dark mode transition */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            padding: 3%; /* Overall padding */
+        }
+
+        /* Dark mode specific styles */
+        .dark-mode {
+            background: linear-gradient(145deg, #1e272e, #000000); /* Dark gradient background */
+            color: #eee; /* Light text */
+        }
+
+        .dark-mode h1, .dark-mode h2, .dark-mode p, .dark-mode label {
+            color: #eee; /* Ensure headings and labels are light in dark mode */
+        }
+
+        /* Primary button styles */
+        .btn-primary {
+            background-color: #6c5ce7; /* Purple */
+            border: none;
+            box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3); /* Soft shadow */
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Hover animations */
+        }
+
+        .btn-primary:hover {
+            background-color: #4a3bcb; /* Darker purple on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+
+        /* Dark mode primary button styles */
+        .dark-mode .btn-primary {
+            background-color: #a29bfe; /* Lighter purple */
+            box-shadow: 0 4px 12px rgba(162, 155, 254, 0.3);
+        }
+
+        .dark-mode .btn-primary:hover {
+            background-color: #81ecec; /* Aqua on hover */
+        }
+
+        /* Form control (input) styles */
+        .form-control {
+            border: 1px solid #ced4da;
+            border-radius: 8px; /* Rounded corners */
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .form-control:focus {
+            border-color: #6c5ce7; /* Purple border on focus */
+            box-shadow: 0 0 0 0.2rem rgba(108, 92, 231, 0.25); /* Purple shadow on focus */
+        }
+
+        /* Dark mode form control styles */
+        .dark-mode .form-control {
+            background-color: #2d3436; /* Dark background */
+            border-color: #444;
+            color: #f1f1f1; /* Light text */
+        }
+
+        .dark-mode .form-control:focus {
+            box-shadow: 0 0 0 0.2rem rgba(162, 155, 254, 0.25);
+        }
+
+        /* Response area styles */
+        #responseArea {
+            margin-top: 30px;
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Dark mode response area styles */
+        .dark-mode #responseArea {
+            background-color: #2c3e50;
+            border-color: #555;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
+        }
+
+        /* Custom toggle switch for dark mode */
+        .form-check-input {
+            width: 3.5em;
+            height: 1.75em;
+            background-color: #bdc3c7; /* Grey background */
+            border: none;
+            border-radius: 1.75em;
+            cursor: pointer;
+            appearance: none; /* Hide default checkbox */
+            position: relative;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .form-check-input::before {
+            content: "";
+            position: absolute;
+            width: 1.5em;
+            height: 1.5em;
+            background-color: #fff; /* White circle */
+            border-radius: 50%;
+            top: 0.125em;
+            left: 0.25em;
+            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bounce effect */
+        }
+
+        .form-check-input:checked {
+            background-color: #6c5ce7; /* Purple when checked */
+        }
+
+        .form-check-input:checked::before {
+            transform: translateX(1.75em); /* Move circle to right */
+        }
+
+        .form-check-label {
+            margin-left: 0.75em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            color: #555;
+            transition: color 0.5s ease-in-out;
+        }
+
+        /* Dark mode label for toggle */
+        .dark-mode .form-check-label {
+            color: #ddd;
+        }
+
+        /* Heading styles */
+        h1, h2 {
+            font-weight: 700;
+            color: #2c3e50; /* Dark blue */
+            transition: color 0.5s ease-in-out;
+        }
+
+        /* Dark mode heading styles */
+        .dark-mode h1, .dark-mode h2 {
+            color: #ecf0f1;
+        }
+
+        /* Card styles */
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            border: none;
+        }
+
+        /* Dark mode card styles */
+        .dark-mode .card {
+            background-color: #2c3e50;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.06);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #34495e; /* Medium dark blue */
+            transition: color 0.5s ease-in-out;
+        }
+
+        /* Dark mode card title styles */
+        .dark-mode .card-title {
+            color: #ecf0f1;
+        }
+
+        /* Card text (preformatted) styles */
+        .card-text {
+            color: #555;
+            white-space: pre-wrap; /* Preserve whitespace and line breaks */
+            font-family: monospace; /* Monospaced font for code-like output */
+            transition: color 0.5s ease-in-out;
+        }
+
+        /* Dark mode card text styles */
+        .dark-mode .card-text {
+            color: #f0f0f0;
+        }
+
+        /* Dark mode icon size */
+        #darkModeIcon {
+            font-size: 1.2em;
+        }
+
+        /* Robot head container */
+        .robot-container {
+            margin-bottom: 20px;
+        }
+
+        .robot-head {
+            width: 100px;
+            transition: transform 0.2s ease-out; /* Smooth movement */
+        }
+
+        /* Progress bar for resume score */
+        .progress {
+            height: 30px;
+            border-radius: 15px;
+            background-color: #e9ecef;
+            overflow: hidden;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+        }
+
+        .progress-bar {
+            background-color: #28a745; /* Green for good score */
+            transition: width 0.6s ease;
+        }
+
+        /* Dark mode progress bar */
+        .dark-mode .progress {
+            background-color: #444;
+        }
+
+        .dark-mode .progress-bar {
+            background-color: #81ecec; /* Light green for dark mode */
+        }
+
+        /* Chart container */
+        #chartContainer {
+            width: 100%;
+            max-width: 600px; /* Limit chart width for better readability */
+            margin: 20px auto; /* Center the chart */
+        }
+    </style>
+</head>
+
+<body class="animate__animated animate__fadeIn">
+    <div class="container mt-5">
+        <div class="row justify-content-between mb-4">
+            <div class="col-auto">
+                {% if logged_in %}
+                <a href="{{ url_for('logout') }}" class="btn btn-danger">
+                    <i class="bi bi-box-arrow-right me-2"></i>Logout
+                </a>
+                {% else %}
+                <a href="{{ url_for('login') }}" class="btn btn-primary">
+                    <i class="bi bi-box-arrow-in-right me-2"></i>Login
+                </a>
+                {% endif %}
+            </div>
+
+            <div class="col-auto">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="darkModeSwitch">
+                    <label class="form-check-label" for="darkModeSwitch">
+                        <i id="darkModeIcon" class="bi bi-moon-stars-fill"></i><span id="darkModeText"> Dark Mode</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="robot-container text-center mb-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="Robot" id="robotHead" class="robot-head">
+        </div>
+
+        <h1 class="text-center mb-4 animate__animated animate__fadeInDown">Unlock Your Potential with AI Resume Analysis</h1>
+        <p class="text-center mb-5 text-muted animate__animated animate__fadeInUp">Upload your resume and let our intelligent AI provide you with valuable insights.</p>
+
+        <div class="card p-4 mb-5 animate__animated animate__fadeInLeft">
+            <form method="POST" enctype="multipart/form-data" id="resumeUploadForm">
+                <div class="input-group">
+                    <input type="file" name="file" class="form-control" required aria-describedby="uploadButton" accept=".pdf">
+                    <button type="submit" class="btn btn-primary" id="uploadButton">
+                        <i class="bi bi-upload me-2"></i>Analyze My Resume
+                    </button>
+                </div>
+                <small class="form-text text-muted mt-2">Only PDF files are supported.</small>
+            </form>
+        </div>
+
+        <div id="resumeScoreSection" style="display:none;" class="card mb-4 animate__animated animate__fadeInRight">
+            <div class="card-body">
+                <h2 class="card-title"><i class="bi bi-bar-chart-line-fill me-2"></i>Resume Score</h2>
+                <div class="progress mb-3">
+                    <div class="progress-bar" role="progressbar" id="resumeScoreProgressBar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="text-center fw-bold" id="resumeScoreValue"></p>
+            </div>
+        </div>
+
+        <div id="scoreDistributionSection" style="display:none;" class="card mb-4 animate__animated animate__fadeInLeft">
+            <div class="card-body">
+                <h2 class="card-title"><i class="bi bi-graph-up me-2"></i>Resume Score Distribution</h2>
+                <div id="chartContainer">
+                    <canvas id="scoreDistributionChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="swotSection" class="card mb-4 animate__animated animate__fadeInRight" style="display:none;">
+            <div class="card-body">
+                <h2 class="card-title"><i class="bi bi-lightbulb-fill me-2"></i>SWOT Analysis</h2>
+                <pre class="card-text" id="swotContent"></pre>
+            </div>
+        </div>
+
+        <div id="careerPathSection" class="card mb-5 animate__animated animate__fadeInLeft" style="display:none;">
+            <div class="card-body">
+                <h2 class="card-title"><i class="bi bi-compass-fill me-2"></i>Predicted Career Paths</h2>
+                <pre class="card-text" id="careerPathContent"></pre>
+            </div>
+        </div>
+
+        <h2 class="mb-3 animate__animated animate__fadeInUp"><i class="bi bi-chat-dots-fill me-2"></i>Ask CareerBot Anything</h2>
+        <div class="card p-4 mb-4 animate__animated animate__fadeInRight">
+            <form id="chatForm">
+                <div class="input-group">
+                    <input type="text" name="query" id="query" class="form-control" placeholder="Enter your career-related question" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-send-fill me-2"></i>Ask
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="responseArea" class="animate__animated animate__fadeInUp"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // --- DOM Element References ---
+        const chatForm = document.getElementById('chatForm');
+        const resumeUploadForm = document.getElementById('resumeUploadForm');
+        const responseArea = document.getElementById('responseArea');
+        const darkModeSwitch = document.getElementById('darkModeSwitch');
+        const darkModeIcon = document.getElementById('darkModeIcon');
+        const darkModeText = document.getElementById('darkModeText');
+        const robotHead = document.getElementById('robotHead');
+
+        // Elements for resume scoring and chart
+        const resumeScoreSection = document.getElementById('resumeScoreSection');
+        const resumeScoreProgressBar = document.getElementById('resumeScoreProgressBar');
+        const resumeScoreValue = document.getElementById('resumeScoreValue');
+        const scoreDistributionSection = document.getElementById('scoreDistributionSection');
+        const scoreDistributionChartCanvas = document.getElementById('scoreDistributionChart');
+
+        // Elements for SWOT and Career Path analysis results
+        const swotSection = document.getElementById('swotSection');
+        const swotContent = document.getElementById('swotContent');
+        const careerPathSection = document.getElementById('careerPathSection');
+        const careerPathContent = document.getElementById('careerPathContent');
+
+        let scoreChart = null; // Variable to hold the Chart.js instance
+
+        // --- Dark Mode Logic ---
+        // Check local storage for dark mode preference on page load
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            darkModeSwitch.checked = true;
+            darkModeIcon.classList.remove('bi-moon-stars-fill');
+            darkModeIcon.classList.add('bi-sun-fill');
+            darkModeText.textContent = ' Light Mode';
+        }
+
+        // Add event listener for dark mode switch toggle
+        darkModeSwitch.addEventListener('change', () => {
+            const isDark = darkModeSwitch.checked;
+            document.body.classList.toggle('dark-mode', isDark); // Toggle dark-mode class on body
+            if (isDark) {
+                darkModeIcon.classList.remove('bi-moon-stars-fill');
+                darkModeIcon.classList.add('bi-sun-fill');
+                darkModeText.textContent = ' Light Mode';
+            } else {
+                darkModeIcon.classList.remove('bi-sun-fill');
+                darkModeIcon.classList.add('bi-moon-stars-fill');
+                darkModeText.textContent = ' Dark Mode';
+            }
+            localStorage.setItem('darkMode', isDark); // Save user preference to local storage
+
+            // If a chart exists, update its colors to match the new mode
+            if (scoreChart) {
+                updateChartColors(isDark);
+            }
+        });
+
+        // --- Resume Upload Form Submission Handler ---
+        resumeUploadForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent the default form submission (page reload)
+            const formData = new FormData(resumeUploadForm); // Get form data including the file
+
+            // Hide all result sections and clear previous messages before new analysis
+            swotSection.style.display = 'none';
+            careerPathSection.style.display = 'none';
+            resumeScoreSection.style.display = 'none';
+            scoreDistributionSection.style.display = 'none';
+            responseArea.innerHTML = ''; // Clear any previous chat responses or errors
+
+            // Display a loading indicator to the user
+            responseArea.innerHTML = `<div class="alert alert-info" role="alert"><i class="bi bi-arrow-clockwise bi-spin me-2"></i>Analyzing your resume... Please wait.</div>`;
+
+            try {
+                // Send the resume file to the backend Flask application
+                const response = await fetch('/', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                // Check if the HTTP response was successful (status code 200-299)
+                if (!response.ok) {
+                    // If not successful, try to parse an error message from the JSON response
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+                }
+
+                // Parse the successful JSON response from the backend
+                const data = await response.json();
+
+                // Clear the loading message once data is received
+                responseArea.innerHTML = '';
+
+                // Update and display SWOT analysis results
+                if (data.swot) {
+                    swotContent.innerHTML = data.swot; // Set the content
+                    swotSection.style.display = 'block'; // Make the section visible
+                    // Re-trigger animation for visual feedback on new content
+                    swotSection.classList.remove('animate__fadeInRight');
+                    void swotSection.offsetWidth; // Trigger reflow to restart animation
+                    swotSection.classList.add('animate__fadeInRight');
+                }
+
+                // Update and display Predicted Career Paths results
+                if (data.career_path) {
+                    careerPathContent.innerHTML = data.career_path;
+                    careerPathSection.style.display = 'block';
+                    careerPathSection.classList.remove('animate__fadeInLeft');
+                    void careerPathSection.offsetWidth;
+                    careerPathSection.classList.add('animate__fadeInLeft');
+                }
+
+                // Update and display Resume Score
+                if (data.score !== undefined) {
+                    resumeScoreSection.style.display = 'block';
+                    const score = data.score;
+                    resumeScoreProgressBar.style.width = `${score}%`; // Set progress bar width
+                    resumeScoreProgressBar.setAttribute('aria-valuenow', score); // Update ARIA value
+                    resumeScoreValue.textContent = `Your Resume Score: ${score}/100`; // Display score text
+                    resumeScoreProgressBar.classList.remove('animate__fadeIn');
+                    void resumeScoreProgressBar.offsetWidth;
+                    resumeScoreProgressBar.classList.add('animate__animated', 'animate__fadeIn'); // Animate progress bar
+                }
+
+                // Update and display Score Distribution Chart
+                if (data.score_distribution_data) {
+                    scoreDistributionSection.style.display = 'block';
+                    renderScoreDistributionChart(data.score_distribution_data, darkModeSwitch.checked);
+                }
+
+            } catch (error) {
+                console.error('Error during resume upload:', error);
+                // Display a user-friendly error message in the response area
+                responseArea.innerHTML = `<div class="alert alert-danger" role="alert"><i class="bi bi-exclamation-triangle-fill me-2"></i>Error analyzing resume: ${error.message}. Please try again.</div>`;
+            }
+        });
+
+
+        // --- Chat Form Submission Handler ---
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent default form submission
+            const queryInput = document.getElementById('query');
+            const query = queryInput.value.trim(); // Get query and trim whitespace
+
+            if (!query) { // If query is empty, show a warning and return
+                responseArea.innerHTML = `<div class="alert alert-warning" role="alert"><i class="bi bi-exclamation-circle me-2"></i>Please enter a question.</div>`;
+                return;
+            }
+
+            // Clear previous chat response and show a typing indicator
+            responseArea.innerHTML = '';
+            responseArea.innerHTML = `<div class="alert alert-info" role="alert"><i class="bi bi-arrow-clockwise bi-spin me-2"></i>CareerBot is typing...</div>`;
+
+            try {
+                // Send the user's query to the chatbot backend endpoint
+                const response = await fetch('/ask', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `query=${encodeURIComponent(query)}` // Encode the query for URL safety
+                });
+
+                // Check if the HTTP response was successful
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.answer || `HTTP error! status: ${response.status}`);
+                }
+
+                // Parse the JSON response from the chatbot
+                const data = await response.json();
+                // Display the chatbot's answer
+                responseArea.innerHTML = `<div class="alert alert-info" role="alert"><i class="bi bi-robot me-2"></i><strong>CareerBot:</strong> ${data.answer}</div>`;
+                queryInput.value = ''; // Clear the input field after sending the query
+            } catch (error) {
+                console.error('Error asking CareerBot:', error);
+                // Display a user-friendly error message for chatbot interaction
+                responseArea.innerHTML = `<div class="alert alert-danger" role="alert"><i class="bi bi-exclamation-triangle-fill me-2"></i>Error talking to CareerBot: ${error.message}.</div>`;
+            }
+        });
+
+        // --- Robot Head Parallax Effect ---
+        // Makes the robot head subtly follow the mouse cursor
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX; // Current mouse X coordinate
+            const y = e.clientY; // Current mouse Y coordinate
+            const centerX = window.innerWidth / 2; // Center of the viewport X
+            const centerY = window.innerHeight / 2; // Center of the viewport Y
+
+            // Calculate rotation angles based on mouse position relative to center
+            // Divided by 40 to control sensitivity (smaller divisor = more sensitive)
+            const rotateX = (y - centerY) / 40;
+            const rotateY = (x - centerX) / 40;
+
+            // Apply 3D rotation transform to the robot head
+            robotHead.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        // --- Chart.js Functionality ---
+        // Function to render or update the resume score distribution chart
+        function renderScoreDistributionChart(chartData, isDarkMode) {
+            // Destroy any existing chart instance to prevent multiple charts on the same canvas
+            if (scoreChart) {
+                scoreChart.destroy();
+            }
+
+            const ctx = scoreDistributionChartCanvas.getContext('2d'); // Get the 2D rendering context
+            const fontColor = isDarkMode ? '#eee' : '#333'; // Text color based on dark mode
+            const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'; // Grid line color
+
+            // Create a new Chart.js instance
+            scoreChart = new Chart(ctx, {
+                type: 'bar', // Defines the chart type as a bar chart
+                data: {
+                    labels: chartData.labels, // Labels for the X-axis (e.g., score ranges)
+                    datasets: [{
+                        label: 'Number of Resumes', // Label for the dataset
+                        data: chartData.data, // Data values for each bar
+                        backgroundColor: isDarkMode ? 'rgba(162, 155, 254, 0.7)' : 'rgba(108, 92, 231, 0.7)', // Bar fill color
+                        borderColor: isDarkMode ? 'rgba(162, 155, 254, 1)' : 'rgba(108, 92, 231, 1)', // Bar border color
+                        borderWidth: 1,
+                        borderRadius: 5 // Optional: adds rounded corners to the bars
+                    }]
+                },
+                options: {
+                    responsive: true, // Chart will resize with its container
+                    maintainAspectRatio: false, // Allows the chart to have a flexible height/width ratio
+                    scales: {
+                        y: { // Y-axis (vertical) configuration
+                            beginAtZero: true, // Start Y-axis at 0
+                            ticks: {
+                                color: fontColor, // Color of Y-axis tick labels
+                                precision: 0 // Ensure integer ticks for count data
+                            },
+                            grid: {
+                                color: gridColor, // Color of Y-axis grid lines
+                                drawBorder: false // Optional: hides the axis line itself
+                            }
+                        },
+                        x: { // X-axis (horizontal) configuration
+                            ticks: {
+                                color: fontColor // Color of X-axis tick labels
+                            },
+                            grid: {
+                                color: gridColor, // Color of X-axis grid lines
+                                drawBorder: false // Optional: hides the axis line itself
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false // Hide the dataset legend as it's often redundant for single datasets
+                        },
+                        title: { // Chart title configuration
+                            display: true,
+                            text: 'Resume Score Distribution Compared to Other Users',
+                            color: fontColor, // Color of the title text
+                            font: {
+                                size: 16,
+                                weight: 'bold'
+                            }
+                        },
+                        tooltip: { // Customize tooltips for better information display on hover
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: ${context.parsed.y} resumes`; // Custom tooltip text
+                                }
+                            }
+                        }
+                    },
+                    animation: { // Animation settings for when the chart is first rendered
+                        duration: 1000, // Animation duration in milliseconds
+                        easing: 'easeOutQuart' // Easing function for smooth animation
+                    }
+                }
+            });
+        }
+
+        // Function to update chart colors when dark mode is toggled
+        function updateChartColors(isDarkMode) {
+            if (scoreChart) { // Only update if a chart instance exists
+                const fontColor = isDarkMode ? '#eee' : '#333';
+                const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+                const backgroundColor = isDarkMode ? 'rgba(162, 155, 254, 0.7)' : 'rgba(108, 92, 231, 0.7)';
+                const borderColor = isDarkMode ? 'rgba(162, 155, 254, 1)' : 'rgba(108, 92, 231, 1)';
+
+                // Update scale (axis) colors
+                scoreChart.options.scales.y.ticks.color = fontColor;
+                scoreChart.options.scales.y.grid.color = gridColor;
+                scoreChart.options.scales.x.ticks.color = fontColor;
+                scoreChart.options.scales.x.grid.color = gridColor;
+
+                // Update plugin colors (e.g., title)
+                scoreChart.options.plugins.title.color = fontColor;
+
+                // Update dataset colors
+                scoreChart.data.datasets[0].backgroundColor = backgroundColor;
+                scoreChart.data.datasets[0].borderColor = borderColor;
+
+                scoreChart.update(); // Re-render the chart with the new colors
+            }
+        }
+    </script>
+</body>
+</html>
