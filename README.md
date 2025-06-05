@@ -37,8 +37,8 @@ Powered by **Aspire AI**, a real-time chatbot, this tool offers deep insights in
 
 ---
 ## 🤝 Developer
-⚙️ Srinidhi S Joshi - srinidhisjoshi78@gmail.com
-🌐 Sagar - sagarm8310@gmail.com
-🔍 Prajwal C S - Prajwalcsomankoppa@gmail.com
-🔍 Mounesh Kambar - mmkambar04@gmail.com
+- ⚙️ **Srinidhi S Joshi - srinidhisjoshi78@gmail.com**
+- 🌐 **Sagar - sagarm8310@gmail.com**
+- 🔍 **Prajwal C S - Prajwalcsomankoppa@gmail.com**
+- 🔍 **Mounesh Kambar - mmkambar04@gmail.com**
 
