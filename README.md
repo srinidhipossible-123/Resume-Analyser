@@ -34,3 +34,11 @@ Powered by **Aspire AI**, a real-time chatbot, this tool offers deep insights in
 ![Login](<Screenshot 2025-06-03 110340.png>) ![Logout](<Screenshot 2025-06-03 110356.png>)
 ![Home](<Screenshot 2025-06-03 110430.png>)
 ![Result-Resume Score](<Screenshot 2025-06-03 110146.png>) ![Resume Score Distribution and SWOT Anaysis](<Screenshot 2025-06-03 110225.png>) ![AI Chatbot and Career path](<Screenshot 2025-06-03 110246.png>)
+
+---
+## 🤝 Developer
+⚙️ Srinidhi S Joshi - srinidhisjoshi78@gmail.com
+🌐 Sagar - sagarm8310@gmail.com
+🔍 Prajwal C S - Prajwalcsomankoppa@gmail.com
+🔍 Mounesh Kambar - mmkambar04@gmail.com
+
